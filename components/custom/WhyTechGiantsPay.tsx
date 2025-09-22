@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, TrendingUp, AlertTriangle, Users } from "lucide-react";
+import { CheckCircle, TrendingUp, Users } from "lucide-react";
+import Image from "next/image";
 export default function WhyTechGiantsPay() {
     const companies = [
     {
       name: "Meta (Facebook)",
-      logo: "FB",
+      logo: "/images/meta-logo.png",
       position: "Software Engineer",
       salary: "₹58+ LPA",
       description: "Facebook's news feed algorithm processes billions of posts using advanced data structures. Their interview process heavily focuses on DSA problem-solving skills.",
@@ -14,7 +14,7 @@ export default function WhyTechGiantsPay() {
     },
     {
       name: "Google",
-      logo: "G",
+      logo: "/images/google-logo.png",
       position: "Software Engineer",
       salary: "₹50-₹9 LPA",
       description: "Google's search engine relies on complex algorithms and data structures. Their hiring process is famous for challenging DSA questions and system design.",
@@ -22,7 +22,7 @@ export default function WhyTechGiantsPay() {
     },
     {
       name: "Amazon",
-      logo: "A",
+      logo: "/images/amazon-logo.png",
       position: "Software Engineer",
       salary: "₹45-₹60 LPA",
       description: "Amazon's recommendation system and logistics optimization depend on sophisticated algorithms. Strong DSA skills are mandatory for their technical interviews.",
@@ -32,28 +32,28 @@ export default function WhyTechGiantsPay() {
 
   const advantages = [
     {
-      title: "Age 6-12:",
-      description: "Brain plasticity is at its peak - perfect time to build algorithmic thinking"
+      title: "Level 1:",
+      description: "Brain gets its shape. It sharpens your child's brain. Which helps in coming JEE and tech journey."
     },
     {
-      title: "By Age 16:",
-      description: "Your child will have 10+ years of problem-solving experience behind them"
+      title: "Level 2:",
+      description: "Your child is in far better place compared to peers in terms of problem solving ability and in terms of sharpness of brain."
     },
     {
-      title: "College Advantage:",
-      description: "While peers struggle with DSA, your child will excel effortlessly"
+      title: "Level 3:",
+      description: "By the time your child reaches college, your child will be way ahead from peers."
     },
     {
-      title: "Career Impact:",
+      title: "Beyond Level 3:",
       description: "Land ₹50+ LPA offers straight out of graduation"
     }
   ];
 
   const salaryProgression = [
-    { role: "Fresh Graduate (22 years)", salary: "₹60+ LPA", color: "text-green-400" },
-    { role: "Senior Engineer (25 years)", salary: "₹80+ LPA", color: "text-blue-400" },
-    { role: "Tech Lead (28 years)", salary: "₹1.6+ Crore", color: "text-purple-400" },
-    { role: "Engineering Manager (30 years)", salary: "₹3+ Crore", color: "text-orange-400" },
+    { role: "Fresh Graduate (22 years)", salary: "₹40+ LPA", color: "text-green-400" },
+    { role: "Senior Engineer (25 years)", salary: "₹60+ LPA", color: "text-blue-400" },
+    { role: "Tech Lead (28 years)", salary: "₹90+ LPA", color: "text-purple-400" },
+    { role: "Engineering Manager (30 years)", salary: "₹1.5+ Crore", color: "text-orange-400" },
   ];
 
   return (
@@ -68,7 +68,7 @@ export default function WhyTechGiantsPay() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Facebook, Google, Amazon, and Microsoft heavily rely on Data Structures & Algorithms. Your child's
+            Facebook, Google, Amazon, and Microsoft heavily rely on Data Structures & Algorithms. Your child&apos;s
             early start could mean landing these dream jobs straight out of college!
           </p>
         </div>
@@ -81,8 +81,8 @@ export default function WhyTechGiantsPay() {
               <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300 hover:scale-[1.02]">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className={`${company.bgColor} w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-xl`}>
-                      {company.logo}
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-xl`}>
+                      <Image src={company.logo} alt={company.name} width={48} height={48} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
@@ -144,34 +144,11 @@ export default function WhyTechGiantsPay() {
         </div>
 
         {/* Bottom Warning Section */}
-        <Card className="bg-gradient-to-r from-red-900/20 to-orange-900/20 border-red-500/20">
-          <CardContent className="p-8 text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <AlertTriangle className="w-8 h-8 text-yellow-400" />
-              <h2 className="text-3xl font-bold text-white">The Competition is Getting Fierce</h2>
-            </div>
-            <p className="text-gray-300 mb-6 max-w-4xl mx-auto text-lg leading-relaxed">
-              Every year, millions of engineering graduates compete for these high-paying positions. Only those with strong DSA
-              foundations and early problem-solving experience get selected.
-            </p>
-            <div className="bg-yellow-400/10 border border-yellow-400/20 rounded-lg p-4 mb-8">
-              <p className="text-yellow-400 font-semibold text-lg">
-                Don't let your child start the race when others are already at the finish line!
-              </p>
-            </div>
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-bold px-8 py-3 text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Start Your Child's Journey Today
-            </Button>
-          </CardContent>
-        </Card>
 
         {/* Footer */}
         <div className="text-center mt-12 pt-8 border-t border-slate-700">
           <p className="text-gray-400">
-            Give your child the competitive advantage they need for tomorrow's tech careers
+            Give your child the competitive advantage they need for tomorrow&#39;s tech careers
           </p>
         </div>
       </div>

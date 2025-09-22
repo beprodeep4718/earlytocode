@@ -1,4 +1,4 @@
-import {Avatars, Client, Storage, Users, TablesDB} from "node-appwrite"
+import {Avatars, Client, Storage, Users, TablesDB, Account} from "node-appwrite"
 
 
 const client = new Client();
@@ -20,3 +20,6 @@ export const users = new Users(client);
 export const tablesDb = new TablesDB(client);
 export const storage = new Storage(client);
 export const avatars = new Avatars(client);
+export const account = new Account(client);
+
+export {ID} from "node-appwrite"

@@ -3,7 +3,7 @@ import { db, usersTable } from "@/models/name";
 import { Models, OAuthProvider, Query } from "appwrite"; 
 import { create } from "zustand";
 
-interface UserProfile {
+export interface UserProfile {
   $id: string;
   userId: string;
   name?: string;
@@ -95,7 +95,6 @@ export const useAuthStore = create<AuthState>((set) => ({
     set({ isLoading: true, error: null });
     try {
       const user = await account.get();
-      console.log(user)
       // Check if user exists in table
       const result = await databases.listDocuments(db, usersTable, [
         Query.equal("userId", user.$id),
