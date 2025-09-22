@@ -21,7 +21,6 @@ export default function Navbar() {
           <Link href="#courses" className="hover:text-purple-600">Courses</Link>
           <Link href="#benefits" className="hover:text-purple-600">Why Coding</Link>
           <Link href="#plans" className="hover:text-purple-600">Plans</Link>
-          <Link href="#testimonials" className="hover:text-purple-600">Testimonials</Link>
         </nav>
 
         {/* Auth Section */}

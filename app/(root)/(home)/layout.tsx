@@ -1,24 +1,12 @@
-"use client"
-import Loader from '@/components/custom/Loader';
-import Navbar from '@/components/custom/Navbar'
-import { useAuthStore } from '@/store/auth.store';
-import React, { useEffect } from 'react'
+import Navbar from '@/components/custom/Navbar';
 
-
-const HomeLayout = ({children}: {children: React.ReactNode}) => {
-  const { isLoading, fetchUser } = useAuthStore();
-    useEffect(() => {
-      fetchUser();
-    }, [fetchUser]);
-    if (isLoading) {
-      return <Loader />;
-    }
+const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main>
       <Navbar />
       {children}
     </main>
-  )
-}
+  );
+};
 
-export default HomeLayout
+export default HomeLayout;
