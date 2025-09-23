@@ -54,7 +54,7 @@ export function FaqSection() {
   return (
     // Before: bg-slate-950 text-white
     // After: Using theme-aware variables for background and text
-    <section className="bg-background py-16 sm:py-24">
+    <section id="faqs" className="bg-background py-16 sm:py-24">
       <div className="container mx-auto max-w-4xl px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold tracking-tight text-foreground">

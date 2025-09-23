@@ -18,9 +18,10 @@ export default function Navbar() {
         </Link>
         
         <nav className="hidden gap-6 md:flex">
-          <Link href="#courses" className="hover:text-purple-600">Courses</Link>
-          <Link href="#benefits" className="hover:text-purple-600">Why Coding</Link>
-          <Link href="#plans" className="hover:text-purple-600">Plans</Link>
+          <Link href="#benefits" className="hover:text-purple-600">Why</Link>
+          <Link href="#reward" className="hover:text-purple-600">Reward</Link>
+          <Link href="#plans" className="hover:text-purple-600">Buy</Link>
+          <Link href="#faqs" className="hover:text-purple-600">FAQs</Link>
         </nav>
 
         {/* Auth Section */}

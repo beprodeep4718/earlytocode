@@ -62,7 +62,7 @@ const features: Feature[] = [
 
 export default function FeatureCards() {
   return (
-    <div className="grid md:grid-cols-3 gap-8">
+    <div id="benefits" className="grid md:grid-cols-3 gap-8">
       {features.map((feature, idx) => (
         <Card
           key={idx}
