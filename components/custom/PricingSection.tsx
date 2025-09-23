@@ -105,7 +105,7 @@ const plans: Plan[] = [
 
 export function PricingSection(){
   return (
-    <section className="py-16 sm:py-24">
+    <section id="plans" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-500">

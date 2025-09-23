@@ -14,7 +14,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         
         <Link href="/" className="text-xl font-bold text-purple-600">
-          early2code
+          &lt;Early2Code /&gt;
         </Link>
         
         <nav className="hidden gap-6 md:flex">
