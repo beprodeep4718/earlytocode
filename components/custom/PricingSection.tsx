@@ -16,6 +16,7 @@ type PlanPrice = {
   savings: number;
   offer: number;
   discount: string;
+  perClass: number;
 };
 
 type Plan = {
@@ -34,70 +35,74 @@ const plans: Plan[] = [
   {
     name: "Basic",
     icon: <Flame className="w-6 h-6" />,
-    description: "Best for 6-7 standard students.",
+    description: "Best for 8-10 years old students.",
     price: {
       original: 30000,
       savings: 3000,
       offer: 27000.0,
       discount: "10% OFF",
+      perClass: 540
     },
     validity: "24 Months",
     isFeatured: false,
     features: [
       { text: "Hands on python", included: true },
-      { text: "Basics of Math and Data structures", included: true },
+      { text: "Basics of Math and Data structures using Python", included: true },
       { text: "1:1 classes for 1 hour twice a week", included: true },
-      { text: "As low as 540/ class", included: true },
+      { text: "Total 50 number of classes", included: true },
+      { text: "Permanent access on course material", included: true },
       { text: "AI basics", included: false },
       { text: "AI project", included: false },
-      { text: "Permanent access on course material", included: false },
     ],
     cta: "Buy Now",
   },
   {
     name: "Intermediate",
     icon: <Rocket className="w-6 h-6" />,
-    description: "Best for 8-9 standard students.",
+    description: "Best for 11-13 years old students.",
     price: {
-      original: 11999,
-      savings: 8800,
-      offer: 40000.0,
-      discount: "27% OFF",
+      original: 40000,
+      savings: 4000,
+      offer: 36000.0,
+      discount: "10% OFF",
+      perClass: 514
     },
     validity: "36 Months",
-    isFeatured: true,
+    isFeatured: false,
     features: [
       { text: "Everything in basics", included: true },
       { text: "Intermediate hands on python", included: true },
-      { text: "Intermediate math and data structure", included: true },
+      { text: "Intermediate math and data structure using Python", included: true },
       { text: "How to use ChatGPT", included: true },
+      { text: "1:1 classes for 1 hour twice a week", included: true },
+      { text: "Total 70 number of classes", included: true },
+      { text: "Permanent access on course material", included: true },
       { text: "AI basics", included: true },
       { text: "AI project", included: false },
-      { text: "70 personal classes for 1 hour twice a week", included: true },
-      { text: "As low as 515 / class", included: true },
-      { text: "Permanent access on course material", included: false },
     ],
     cta: "Buy Now",
   },
   {
     name: "Advanced",
     icon: <Crown className="w-6 h-6" />,
-    description: "Best for class 10+ and pre college computer science.",
+    description: "Best for 14-18 years old students. Pre-College level.",
     price: {
-      original: 11999,
-      savings: 8800,
-      offer: 50000.0,
-      discount: "27% OFF",
+      original: 50000,
+      savings: 5000,
+      offer: 45000.0,
+      discount: "10% OFF",
+      perClass: 500
     },
     isFeatured: false,
     features: [
-      { text: "Everything in Intermediate +", included: true },
+      { text: "Everything in Basic and Intermediate +", included: true },
       { text: "Hands on advanced python", included: true },
-      { text: "Advanced math and datastructures", included: true },
+      { text: "Advanced math and data-structures using Python", included: true },
+      { text: "1:1 classes for 1 hour twice a week", included: true },
+      { text: "Total 90 number of classes", included: true },
       { text: "Hands on AI project", included: true },
-      { text: "Object detection", included: true },
-      { text: "90 personal classes for 1 hour twice a week", included: true },
-      { text: "get as low as 500/ class", included: true },
+      { text: "Object detection using AI", included: true },
+      { text: "Permanent access on course material", included: true },
     ],
     cta: "Buy Now",
   },
@@ -162,17 +167,12 @@ export function PricingSection(){
                       <div className={cn("p-4 rounded-lg mt-2", plan.isFeatured && "bg-green-600/10")}>
                         <p className="text-sm text-green-400">Offer Price:</p>
                         <p className="text-4xl font-extrabold text-green-400">₹ {plan.price.offer.toFixed(2)}</p>
+                        <p className={cn(plan.isFeatured ? "text-primary-foreground" : "text-primary", "text-lg font-semibold")}>As low as ₹ {plan.price.perClass} / class</p>
                         <div className="mt-2 border-dashed border-2 border-green-400/50 rounded-md text-center py-1">
                           <span className="text-green-400 font-semibold tracking-widest text-sm uppercase">Early Bird</span>
                         </div>
                       </div>
                     </div>
-                  )}
-
-                  {plan.validity && (
-                    <p className="text-sm mb-6 text-zinc-400">
-                      <span className={cn(plan.isFeatured ? "text-muted" : "text-muted-foreground", "font-semibold")}>Validity:</span> {plan.validity}
-                    </p>
                   )}
 
                   <div>

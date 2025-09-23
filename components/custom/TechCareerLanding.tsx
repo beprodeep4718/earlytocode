@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { ShineBorder } from "../ui/shine-border";
 import { AnimatedGradientText } from "../ui/animated-gradient-text";
+import { OtpVerificationDialog } from "./dialog/OtpVerificationDialog";
 
 // --- DATA (with improved copy) ---
 const companies = [
@@ -88,18 +89,12 @@ export default function TechCareerLanding() {
             Algorithms that top tech giants demand. An early start is the
             ultimate competitive advantage.
           </p>
-          <Button
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-6 rounded-full group"
-          >
-            Register as Early Bird
-            <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <OtpVerificationDialog />
           
         </div>
 
         {/* --- ROADMAP --- */}
-        <div>
+        {/* <div>
           <h2 className="text-3xl font-bold mb-4 text-center lg:text-left">
             The Roadmap to Success
           </h2>
@@ -117,7 +112,7 @@ export default function TechCareerLanding() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* --- NEW SECTION: CREDIBILITY --- */}
 
@@ -136,13 +131,6 @@ export default function TechCareerLanding() {
             The journey to a top tech career begins today. Let us show you how
             our program creates the engineers of tomorrow.
           </p>
-          <Button
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-6 rounded-full group"
-          >
-            Register as Early Bird
-            <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-          </Button>
         </div>
       </div>
     </div>

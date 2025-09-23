@@ -10,6 +10,8 @@ import { BrainCircuit } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { CompanyLogo } from "@/components/custom/CompanyLogo";
+import { CountdownTimerCard } from "@/components/custom/CountdownTimerCard";
+import { TopSalariesSection } from "@/components/custom/TopSalariesSection";
 
 export default function Home() {
   return (
@@ -20,18 +22,18 @@ export default function Home() {
         <section className="py-16 px-4 bg-background">
           <div className="max-w-6xl mx-auto">
             <div className="mb-12">
-              <Card className="bg-slate-900/60 backdrop-blur-sm border-slate-800 max-w-4xl mx-auto relative overflow-hidden">
+              <Card className="dark:bg-slate-900/60 not-dark:bg-slate-200/60 backdrop-blur-sm max-w-4xl mx-auto relative overflow-hidden">
                 <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
                 <CardContent className="p-8 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                   <BrainCircuit className="w-16 h-16 text-blue-400 flex-shrink-0" />
                   <div>
-                    <p className="text-slate-400">
+                    <p className="text-muted-foreground">
                       Designed and regularly updated by
                     </p>
                     <AnimatedGradientText className="text-2xl font-bold mt-1">
                       IIT Guwahati Alumni Engineers
                     </AnimatedGradientText>
-                    <p className="text-lg text-slate-300">
+                    <p className="text-lg text-muted-foreground">
                       with deep research experience in AI.
                     </p>
                   </div>
@@ -61,10 +63,11 @@ export default function Home() {
               skilled programmers who can build, optimize, and maintain these AI
               systems. Your child&apos;s coding skills will be recession-proof!
             </p>
-            <CompanyLogo />
           </div>
         </section>
+        <TopSalariesSection />
         <TechCareerLanding />
+        <CountdownTimerCard />
         <PricingSection />
         <FaqSection />
       </main>

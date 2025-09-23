@@ -7,23 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-// --- FAQ Data (no changes needed here) ---
+// --- FAQ Data (updated based on requested Q&A) ---
 const faqData = [
   {
-    question: "What are the requirements to join?",
-    answer: "All you need is a small laptop and a stable internet connection to get started on your learning journey.",
+    question: "What are the requirements?",
+    answer:
+      "Just a small laptop and a stable internet connection. We’ll take care of everything else.",
   },
   {
     question: "What is the refund policy?",
-    answer: "We offer a flexible refund policy. Please contact our support team for detailed information regarding your specific plan.",
+    answer:
+      "If you raise a refund request within 2 weeks of your class start date, we’ll issue a 100% refund—no questions asked.",
   },
   {
     question: "When will the classes be scheduled?",
-    answer: "We offer multiple time slots. After enrolling, you will be asked to select two preferred slots for your weekly classes, which will repeat every week.",
+    answer:
+      "We will share multiple time slots. You’ll need to select 2 fixed slots per week, which will repeat every week.",
   },
   {
     question: "What happens after I make the payment?",
-    answer: "Once your payment is confirmed, we will assign your class slots within 2 business days and you'll receive a welcome email with all the details.",
+    answer:
+      "Within 2 days of payment, we’ll confirm and assign your class slots.",
+  },
+  {
+    question: "Who can take this course?",
+    answer: "Kids aged 8 to 18 years (pre-college students).",
+  },
+  {
+    question: "Who will teach?",
+    answer:
+      "Our instructors are skilled Computer Science students with strong programming backgrounds. They undergo a rigorous interview process—cracking it is not easy—so only the best get to teach your child.",
+  },
+  {
+    question: "Why don’t we teach app or web development directly?",
+    answer:
+      "Technology trends keep changing—5 years ago it was web and app development, today it’s AI, tomorrow it will be something new. What never changes are the fundamentals of programming. We focus on building strong fundamentals so your child is prepared for any future technology.",
+  },
+  {
+    question: "Why learn coding separately when AI tools exist?",
+    answer:
+      "AI tools can assist with answers, but they cannot replace the core skills of problem-solving, logical thinking, and creativity. If your child learns coding, they’ll understand how technology actually works rather than just consuming it. This builds confidence, independence, and the ability to innovate—so instead of relying on AI, they’ll know how to guide it, improve it, and create with it.",
   },
 ];
 
