@@ -120,27 +120,6 @@ export default function TechCareerLanding() {
         </div>
 
         {/* --- NEW SECTION: CREDIBILITY --- */}
-        <div className="mt-20">
-          <Card className="bg-slate-900/60 backdrop-blur-sm border-slate-800 max-w-4xl mx-auto relative overflow-hidden">
-            <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
-            <CardContent className="p-8 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-              <BrainCircuit className="w-16 h-16 text-blue-400 flex-shrink-0" />
-              <div>
-                <p className="text-slate-400">
-                  Designed and regularly updated by
-                </p>
-                <AnimatedGradientText
-                  className="text-2xl font-bold mt-1"
-                >
-                  IIT Guwahati Alumni Engineers
-                </AnimatedGradientText>
-                <p className="text-lg text-slate-300">
-                  with deep research experience in AI.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
 
         {/* --- NEW SECTION: INVESTMENT PUNCHLINE --- */}
         <div className="text-center mt-24">
@@ -161,7 +140,7 @@ export default function TechCareerLanding() {
             size="lg"
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-6 rounded-full group"
           >
-            Book Your FREE Consultation
+            Register as Early Bird
             <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>

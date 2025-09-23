@@ -153,7 +153,7 @@ export function PricingSection(){
                         <p className="text-sm line-through">₹ {plan.price.original}</p>
                       </div>
                       <div className={cn(plan.isFeatured ? "text-secondary" : "text-secondary-foreground", "flex items-baseline gap-2")}>
-                        <p>Regular</p>
+                        <p>Savings</p>
                         <p className="text-lg">
                           ₹ {plan.price.savings}{" "}
                           <span className="text-sm text-green-400">{plan.price.discount}</span>
@@ -162,6 +162,9 @@ export function PricingSection(){
                       <div className={cn("p-4 rounded-lg mt-2", plan.isFeatured && "bg-green-600/10")}>
                         <p className="text-sm text-green-400">Offer Price:</p>
                         <p className="text-4xl font-extrabold text-green-400">₹ {plan.price.offer.toFixed(2)}</p>
+                        <div className="mt-2 border-dashed border-2 border-green-400/50 rounded-md text-center py-1">
+                          <span className="text-green-400 font-semibold tracking-widest text-sm uppercase">Early Bird</span>
+                        </div>
                       </div>
                     </div>
                   )}

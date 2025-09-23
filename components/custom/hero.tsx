@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Input } from "../ui/input";
+import { OtpVerificationDialog } from "./dialog/OtpVerificationDialog";
 
 export default function Hero() {
   return (
@@ -25,19 +26,8 @@ export default function Hero() {
             >
               Pre-register as an early bird and don&apos;t miss your seat
             </label>
-            <Input
-              id="phone-input"
-              type="tel"
-              placeholder="Enter phone number"
-              className="border border-purple-300 rounded px-8 py-6 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-            <Button
-              type="submit"
-              className="bg-purple-700 hover:bg-purple-800 text-white font-medium px-8 py-6 w-full"
-              size={"lg"}
-            >
-              Pre-Register
-            </Button>
+            
+            <OtpVerificationDialog />
           </div>
         </div>
         <div className="w-1/2 flex items-end justify-center mt-10 md:mt-0">

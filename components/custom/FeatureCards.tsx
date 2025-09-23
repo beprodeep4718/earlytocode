@@ -16,7 +16,7 @@ const features: Feature[] = [
     iconBg: "bg-purple-100",
     iconColor: "text-purple-600",
     description:
-      "Details about refunds, cancellations, and how requests are processed quickly and transparently.",
+      "We offer a 100% refund of the course fees within 2 weeks from the commencement date of the class, no questions asked.",
   },
   {
     title: "Leetcode",
@@ -24,7 +24,7 @@ const features: Feature[] = [
     iconBg: "bg-blue-100",
     iconColor: "text-blue-600",
     description:
-      "Practice coding challenges that sharpen problem-solving skills and prepare for interviews.",
+      "Top tech companies use LeetCode-style questions in interviews—early familiarity will help your child crack those jobs with ease.",
   },
   {
     title: "AI",
