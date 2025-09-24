@@ -74,7 +74,7 @@ export default function FeatureCards() {
             >
               <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
             </div>
-            <h3 className="text-xl font-semibold mb-4 text-primary">
+            <h3 className="text-lg font-semibold mb-4 text-primary">
               {feature.title}
             </h3>
             <p className="text-secondary-foreground leading-relaxed">
