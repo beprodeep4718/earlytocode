@@ -40,7 +40,7 @@ export default function Home() {
                 </CardContent>
               </Card>
             </div>
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-500">
                 Why early2code?
               </span>
