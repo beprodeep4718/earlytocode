@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/custom/ModeToggle";
 import { useAuthStore } from "@/store/auth.store";
-import { LogOut, Menu, X } from "lucide-react";
+import { LogOut, Menu } from "lucide-react";
 
 export default function Navbar() {
   const { user, logout, isLoading } = useAuthStore();

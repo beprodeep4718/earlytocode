@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Input } from "../ui/input";
 import { OtpVerificationDialog } from "./dialog/OtpVerificationDialog";
 
 export default function Hero() {
