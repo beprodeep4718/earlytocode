@@ -8,10 +8,9 @@ import { FaqSection } from "@/components/custom/FaqSection";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { BrainCircuit } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShineBorder } from "@/components/ui/shine-border";
-import { CompanyLogo } from "@/components/custom/CompanyLogo";
 import { CountdownTimerCard } from "@/components/custom/CountdownTimerCard";
 import { TopSalariesSection } from "@/components/custom/TopSalariesSection";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 export default function Home() {
   return (
