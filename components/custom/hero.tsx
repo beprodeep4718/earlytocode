@@ -12,11 +12,6 @@ export default function Hero() {
               1:1 Coding Advantage
             </span>
           </h1>
-          <p className="mt-4 max-w-2xl text-sm text-secondary-foreground">
-            Millions of engineering graduates compete for high-paying positions.
-            Only those with strong programming foundations and strong
-            problem-solving ability get selected.
-          </p>
           <div className="flex flex-col w-full max-w-sm items-center gap-4 lg:items-start mt-6">
             <label
               className="block text-xl font-medium text-primary"
