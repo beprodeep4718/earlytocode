@@ -75,7 +75,7 @@ export default function TechCareerLanding() {
         <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-orange-900/30 to-black rounded-full blur-3xl animate-pulse-slow animation-delay-3000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* --- HERO SECTION --- */}
         <div className="text-center mb-20">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
@@ -84,11 +84,6 @@ export default function TechCareerLanding() {
               ₹50+ LPA Career
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-            Give your child the foundational skills in Data Structures &
-            Algorithms that top tech giants demand. An early start is the
-            ultimate competitive advantage.
-          </p>
           <OtpVerificationDialog />
           
         </div>
@@ -126,12 +121,6 @@ export default function TechCareerLanding() {
         </div>
 
         {/* --- FINAL CTA SECTION --- */}
-        <div className="text-center mt-12">
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-            The journey to a top tech career begins today. Let us show you how
-            our program creates the engineers of tomorrow.
-          </p>
-        </div>
       </div>
     </div>
   );
