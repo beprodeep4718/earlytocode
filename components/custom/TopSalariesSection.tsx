@@ -60,7 +60,7 @@ const formatInr = (amountLacs: number) => {
 
 export function TopSalariesSection() {
   return (
-    <section className="bg-background py-6 sm:py-12 relative overflow-hidden">
+    <section id='reward' className="bg-background py-6 sm:py-12 relative overflow-hidden">
       {/* Background gradient subtle effect */}
       <div className="absolute inset-0 z-0 opacity-10 dark:opacity-5">
         <div className="absolute top-1/4 left-0 w-1/3 h-1/2 bg-gradient-to-br from-blue-500 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
