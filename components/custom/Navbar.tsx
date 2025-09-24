@@ -24,9 +24,10 @@ export default function Navbar() {
         
         {/* Desktop Navigation */}
         <nav className="hidden gap-6 md:flex text-sm font-medium">
-          <Link href="#courses" className="text-muted-foreground transition-colors hover:text-foreground">Courses</Link>
-          <Link href="#benefits" className="text-muted-foreground transition-colors hover:text-foreground">Why Coding</Link>
-          <Link href="#plans" className="text-muted-foreground transition-colors hover:text-foreground">Plans</Link>
+          <Link href="#benefits" className="text-muted-foreground transition-colors hover:text-foreground">Why</Link>
+          <Link href="#reward" className="text-muted-foreground transition-colors hover:text-foreground">Rewards</Link>
+          <Link href="#plans" className="text-muted-foreground transition-colors hover:text-foreground">Buy Course</Link>
+          <Link href="#faqs" className="text-muted-foreground transition-colors hover:text-foreground">FAQs</Link>
         </nav>
 
         {/* Right Section: Auth, Theme Toggle, and Mobile Menu */}
@@ -73,9 +74,10 @@ export default function Navbar() {
                   
                   {/* Mobile Navigation Links */}
                   <nav className="flex flex-col gap-6 text-lg font-medium">
-                    <Link href="#courses" onClick={() => setMenuOpen(false)}>Courses</Link>
-                    <Link href="#benefits" onClick={() => setMenuOpen(false)}>Why Coding</Link>
+                    <Link href="#benefits" onClick={() => setMenuOpen(false)}>Why</Link>
+                    <Link href="#reward" onClick={() => setMenuOpen(false)}>Rewards</Link>
                     <Link href="#plans" onClick={() => setMenuOpen(false)}>Plans</Link>
+                    <Link href="#faqs" onClick={() => setMenuOpen(false)}>FAQs</Link>
                   </nav>
 
                   {/* Mobile Auth Buttons at the bottom */}
