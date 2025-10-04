@@ -21,22 +21,8 @@ export function EnrollmentShowcase() {
 
   return (
     <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
-      <div className="flex -space-x-4">
-        <Avatar className="h-10 w-10 border-2 border-background">
-          <AvatarImage src="https://randomuser.me/api/portraits/women/79.jpg" alt="@user1" />
-          <AvatarFallback>U1</AvatarFallback>
-        </Avatar>
-        <Avatar className="h-10 w-10 border-2 border-background">
-          <AvatarImage src="https://randomuser.me/api/portraits/men/34.jpg" alt="@user2" />
-          <AvatarFallback>U2</AvatarFallback>
-        </Avatar>
-        <Avatar className="h-10 w-10 border-2 border-background">
-          <AvatarImage src="https://randomuser.me/api/portraits/women/52.jpg" alt="@user3" />
-          <AvatarFallback>U3</AvatarFallback>
-        </Avatar>
-      </div>
-      <div className="text-left">
-        <p className="font-bold text-foreground">{enrollmentCount}+</p>
+      <div className="">
+        <p className="font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-500">{enrollmentCount}+</p>
         <p className="text-sm text-muted-foreground">Happy learners already registered</p>
       </div>
     </div>
