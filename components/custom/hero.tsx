@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { OtpVerificationDialog } from "./dialog/OtpVerificationDialog";
+import { DynamicEnrollmentCounter } from "./home/DynamicEnrollmentCounter";
 
 export default function Hero() {
   return (
@@ -22,6 +23,7 @@ export default function Hero() {
             
             <OtpVerificationDialog />
           </div>
+          <DynamicEnrollmentCounter />
         </div>
         <div className="w-1/2 flex items-end justify-center mt-10 md:mt-0">
           <Image
