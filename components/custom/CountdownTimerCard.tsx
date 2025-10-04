@@ -1,4 +1,3 @@
-// components/CountdownTimerCard.tsx
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -6,11 +5,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Timer } from 'lucide-react';
 
-// Set your deadline here.
-// Example: Set to midnight on September 30, 2025 (a week from the current time)
-const DEADLINE = new Date('2025-09-30T23:59:59');
+// Helper to get a deadline 7 days from now
+const getDeadline = () => new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 
 export function CountdownTimerCard() {
+  const [deadline, setDeadline] = useState<Date>(getDeadline());
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -20,7 +19,7 @@ export function CountdownTimerCard() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = +DEADLINE - +new Date();
+      const difference = +deadline - +new Date();
       let newTimeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
       if (difference > 0) {
@@ -37,11 +36,16 @@ export function CountdownTimerCard() {
     setTimeLeft(calculateTimeLeft());
 
     const timerInterval = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      const difference = +deadline - +new Date();
+      if (difference <= 0) {
+        setDeadline(getDeadline());
+      } else {
+        setTimeLeft(calculateTimeLeft());
+      }
     }, 1000);
 
     return () => clearInterval(timerInterval);
-  }, []);
+  }, [deadline]);
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center p-2 rounded-lg bg-muted min-w-[70px]">
