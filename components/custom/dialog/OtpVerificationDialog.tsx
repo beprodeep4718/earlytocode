@@ -123,7 +123,7 @@ export function OtpVerificationDialog() {
     <Dialog onOpenChange={(open) => !open && reset()}>
       <DialogTrigger asChild>
         <Button size="sm" className="font-bold px-8 py-6">
-          Register as Early Bird
+          Register as Early Bird For Free !
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">

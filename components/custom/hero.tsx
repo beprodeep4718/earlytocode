@@ -3,7 +3,7 @@ import { OtpVerificationDialog } from "./dialog/OtpVerificationDialog";
 
 export default function Hero() {
   return (
-    <section className="pt-20 text-center bg-gradient-to-b  not-dark:from-purple-100 to-background w-full px-5 md:px-20">
+    <section className="text-center bg-gradient-to-b  not-dark:from-purple-100 to-background w-full px-5 md:px-20 pt-20">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
         <div className="lg:w-1/2 w-full flex flex-col items-center lg:items-start lg:text-left">
           <h1 className="text-3xl md:text-5xl font-bold ">
@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
         <div className="w-1/2 flex items-end justify-center mt-10 md:mt-0">
           <Image
-            src="/images/hero2.png"
+            src="/images/hero8.png"
             alt="Kids Learning"
             width={500}
             height={500}
