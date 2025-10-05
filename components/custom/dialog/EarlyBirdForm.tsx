@@ -38,7 +38,7 @@ export function EarlyBirdForm() {
           onChange={(e) => setPhoneNumber(e.target.value)}
           required
         />
-        <Button type="submit" size="lg" className="h-12 font-bold" disabled={isLoading}>
+        <Button type="submit" size="lg" className="font-bold h-12" disabled={isLoading}>
           {isLoading && verificationStep === 'enter-phone' && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Get Early Access
         </Button>

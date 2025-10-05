@@ -1,8 +1,9 @@
 // components/EnrollmentShowcase.tsx
 "use client";
 
+import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
+import { Flame } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const BASE_ENROLLMENTS = 200; 
 const START_DATE = new Date('2025-10-01');
@@ -21,8 +22,9 @@ export function EnrollmentShowcase() {
 
   return (
     <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
-      <div className="">
-        <p className="font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-500">{enrollmentCount}+</p>
+      <div className="flex items-center gap-2">
+        <Flame className='text-muted-foreground'/>
+        <AnimatedGradientText className="font-bold text-3xl">{enrollmentCount}+</AnimatedGradientText>
         <p className="text-sm text-muted-foreground">Happy learners already registered</p>
       </div>
     </div>

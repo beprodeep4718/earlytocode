@@ -10,9 +10,9 @@ import {
   ShieldCheck,
   Target,
 } from "lucide-react";
-import { ShineBorder } from "../ui/shine-border";
-import { AnimatedGradientText } from "../ui/animated-gradient-text";
-import { OtpVerificationDialog } from "./dialog/OtpVerificationDialog";
+import { ShineBorder } from "../../ui/shine-border";
+import { AnimatedGradientText } from "../../ui/animated-gradient-text";
+import { OtpVerificationDialog } from "../dialog/OtpVerificationDialog";
 
 // --- DATA (with improved copy) ---
 const companies = [

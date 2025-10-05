@@ -1,15 +1,15 @@
 "use client";
-import Hero from "@/components/custom/hero";
-import FeatureCards from "@/components/custom/FeatureCards";
-import QuotesSection from "@/components/custom/QuotesSection";
-import TechCareerLanding from "@/components/custom/TechCareerLanding";
-import { PricingSection } from "@/components/custom/PricingSection";
-import { FaqSection } from "@/components/custom/FaqSection";
+import Hero from "@/components/custom/home/hero";
+import FeatureCards from "@/components/custom/home/FeatureCards";
+import QuotesSection from "@/components/custom/home/QuotesSection";
+import TechCareerLanding from "@/components/custom/home/TechCareerLanding";
+import { PricingSection } from "@/components/custom/home/PricingSection";
+import { FaqSection } from "@/components/custom/home/FaqSection";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { BrainCircuit } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { CountdownTimerCard } from "@/components/custom/CountdownTimerCard";
-import { TopSalariesSection } from "@/components/custom/TopSalariesSection";
+import { CountdownTimerCard } from "@/components/custom/home/CountdownTimerCard";
+import { TopSalariesSection } from "@/components/custom/home/TopSalariesSection";
 import { ShineBorder } from "@/components/ui/shine-border";
 
 export default function Home() {

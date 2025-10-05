@@ -6,7 +6,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Quote } from "lucide-react";
-import { ShineBorder } from "../ui/shine-border";
+import { ShineBorder } from "../../ui/shine-border";
 
 // You can fetch this data from a CMS or API
 const quotesData = [
