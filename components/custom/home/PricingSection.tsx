@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, XCircle, Flame, Rocket, Crown } from "lucide-react";
@@ -6,218 +7,250 @@ import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 import Link from "next/link";
 
-// --- Types ---
-type PlanFeature = {
-  text: string;
-  included: boolean;
-};
-
-type PlanPrice = {
-  original: number;
-  savings: number;
-  offer: number;
-  discount: string;
+// --- Enhanced Types ---
+type PriceInfo = {
+  amount: number;
+  original?: number; // Optional, for showing a discount
   perClass: number;
+  monthlyInstallment: number;
 };
 
 type Plan = {
   name: string;
   icon: ReactNode;
   description: string;
-  price: PlanPrice;
-  validity?: string;
+  priceUpfront: PriceInfo;
+  priceMonthly: PriceInfo;
+  validity: string;
   isFeatured: boolean;
-  features: PlanFeature[];
-  cta: string;
+  features: { text: string; included: boolean }[];
+  ctaText: string;
 };
 
-// --- Data for the pricing plans ---
+// --- Enhanced Data for the pricing plans ---
 const plans: Plan[] = [
   {
     name: "Basic",
     icon: <Flame className="w-6 h-6" />,
-    description: "Best for 8-10 years old students.",
-    price: {
+    description: "Ideal for beginners aged 8-10. A perfect introduction to the world of code.",
+    priceUpfront: {
+      amount: 27000,
       original: 30000,
-      savings: 3000,
-      offer: 27000.0,
-      discount: "10% OFF",
-      perClass: 540
+      perClass: 540,
+      monthlyInstallment: 4320, // 27000 / 12 months
     },
-    validity: "24 Months",
+    priceMonthly: {
+      amount: 4320, // Example monthly price
+      perClass: 625,
+      monthlyInstallment: 4320,
+    },
+    validity: "50 Classes",
     isFeatured: false,
     features: [
-      { text: "Hands on python", included: true },
-      { text: "Basics of Math and Data structures using Python", included: true },
-      { text: "1:1 classes for 1 hour twice a week", included: true },
-      { text: "Total 50 number of classes", included: true },
-      { text: "Permanent access on course material", included: true },
+      { text: "Hands on Python basics", included: true },
+      { text: "Intro to Math & Data Structures", included: true },
+      { text: "1:1 classes, 1 hour twice a week", included: true },
+      { text: "Permanent access to course material", included: true },
       { text: "AI basics", included: false },
-      { text: "AI project", included: false },
+      { text: "Hands-on AI project", included: false },
     ],
-    cta: "Buy Now",
+    ctaText: "Choose Basic",
   },
   {
     name: "Intermediate",
     icon: <Rocket className="w-6 h-6" />,
-    description: "Best for 11-13 years old students.",
-    price: {
+    description: "For students aged 11-13 who are ready to build on their skills.",
+    priceUpfront: {
+      amount: 36000,
       original: 40000,
-      savings: 4000,
-      offer: 36000.0,
-      discount: "10% OFF",
-      perClass: 514
+      perClass: 514,
+      monthlyInstallment: 4320, // 36000 / 18 months
     },
-    validity: "36 Months",
-    isFeatured: false,
+    priceMonthly: {
+      amount: 4320,
+      perClass: 575,
+      monthlyInstallment: 4320,
+    },
+    validity: "70 Classes",
+    isFeatured: false, // Let's make this the featured plan
     features: [
-      { text: "Everything in basics", included: true },
-      { text: "Intermediate hands on python", included: true },
-      { text: "Intermediate math and data structure using Python", included: true },
-      { text: "How to use ChatGPT", included: true },
-      { text: "1:1 classes for 1 hour twice a week", included: true },
-      { text: "Total 70 number of classes", included: true },
-      { text: "Permanent access on course material", included: true },
-      { text: "AI basics", included: true },
-      { text: "AI project", included: false },
+      { text: "Everything in Basic", included: true },
+      { text: "Intermediate Python concepts", included: true },
+      { text: "How to effectively use ChatGPT", included: true },
+      { text: "AI basics and principles", included: true },
+      { text: "Permanent access to course material", included: true },
+      { text: "Hands-on AI project", included: false },
     ],
-    cta: "Buy Now",
+    ctaText: "Choose Intermediate",
   },
   {
     name: "Advanced",
     icon: <Crown className="w-6 h-6" />,
-    description: "Best for 14-18 years old students. Pre-College level.",
-    price: {
+    description: "Pre-college level curriculum for students aged 14-18.",
+    priceUpfront: {
+      amount: 45000,
       original: 50000,
-      savings: 5000,
-      offer: 45000.0,
-      discount: "10% OFF",
-      perClass: 500
+      perClass: 500,
+      monthlyInstallment: 4320, // 45000 / 24 months
     },
+    priceMonthly: {
+      amount: 4320,
+      perClass: 525,
+      monthlyInstallment: 4320,
+    },
+    validity: "90 Classes",
     isFeatured: false,
     features: [
-      { text: "Everything in Basic and Intermediate +", included: true },
-      { text: "Hands on advanced python", included: true },
-      { text: "Advanced math and data-structures using Python", included: true },
-      { text: "1:1 classes for 1 hour twice a week", included: true },
-      { text: "Total 90 number of classes", included: true },
-      { text: "Hands on AI project", included: true },
-      { text: "Object detection using AI", included: true },
-      { text: "Permanent access on course material", included: true },
+      { text: "Everything in Intermediate", included: true },
+      { text: "Advanced Python & Data Structures", included: true },
+      { text: "Hands-on AI project (e.g., Object Detection)", included: true },
+      { text: "College-level readiness", included: true },
+      { text: "Permanent access to course material", included: true },
     ],
-    cta: "Buy Now",
+    ctaText: "Choose Advanced",
   },
 ];
 
-export function PricingSection(){
+const BillingToggle = ({ billingPeriod, setBillingPeriod }: {
+  billingPeriod: 'upfront' | 'monthly';
+  setBillingPeriod: (period: 'upfront' | 'monthly') => void;
+}) => (
+  <div className="flex justify-center items-center gap-4">
+    <span className={cn("font-medium", billingPeriod === 'monthly' ? 'text-white' : 'text-slate-400')}>
+      Monthly
+    </span>
+    <button
+      onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'upfront' : 'monthly')}
+      className="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-700 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 focus:ring-offset-black"
+      aria-pressed={billingPeriod === 'upfront'}
+    >
+      <span
+        className={cn(
+          "inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out",
+          billingPeriod === 'upfront' ? 'translate-x-5 bg-purple-500' : 'translate-x-0'
+        )}
+      />
+    </button>
+    <span className={cn("font-medium", billingPeriod === 'upfront' ? 'text-white' : 'text-slate-400')}>
+      Pay Upfront
+    </span>
+    <Badge variant="default" className="bg-green-600/80 text-white font-semibold">
+      Save 10%
+    </Badge>
+  </div>
+);
+
+export function PricingSection() {
+  const [billingPeriod, setBillingPeriod] = useState<'upfront' | 'monthly'>('upfront');
+
   return (
-    <section id="plans" className="py-16 sm:py-24">
-      <div className="container mx-auto max-w-6xl px-2">
+    <section id="plans" className="py-16 sm:py-24 bg-black text-white">
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-500">
-            Choose Your Plan
+          <h2 className="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-400 pb-2">
+            Choose Your Learning Path
           </h2>
           <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            Our course is designed by IITian software engineers and the syllabus is updated in a regular interval to stay up to the date
+            Designed by IITian software engineers. Our curriculum is constantly updated to keep you ahead of the curve.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {plans.map((plan) => (
-            <div key={plan.name} className={`relative ${plan.isFeatured ? "-my-4" : ""}`}>
-              {plan.isFeatured && (
-                <Badge
-                  variant="default"
-                  className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600 text-white font-semibold py-1 px-4 z-10"
-                >
-                  Most Popular
-                </Badge>
-              )}
-              <Card
-                className={cn(
-                  "w-full flex flex-col h-full",
-                  plan.isFeatured
-                    ? "bg-neutral-900 dark:bg-neutral-200 border-purple-600 border-2 shadow-lg shadow-purple-600/20"
-                    : "border-slate-800"
-                )}
-              >
-                <CardHeader className="pt-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className={cn(plan.isFeatured ? "text-purple-400" : "text-slate-500")}>{plan.icon}</div>
-                    <CardTitle className={cn(plan.isFeatured ? "text-primary-foreground" : "text-primary", "font-bold text-2xl")}>
-                      {plan.name}
-                    </CardTitle>
-                  </div>
-                  <CardDescription className="text-slate-400 h-12">{plan.description}</CardDescription>
-                </CardHeader>
+        <div className="mb-12">
+            <BillingToggle billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
+        </div>
 
-                <CardContent className="flex-grow">
-                  {plan.price && (
-                    <div className="mb-6">
-                      <div className={cn(plan.isFeatured ? "text-secondary" : "text-secondary-foreground", "flex items-baseline gap-2")}>
-                        <p>Original</p>
-                        <p className="text-sm line-through">₹ {plan.price.original}</p>
-                      </div>
-                      <div className={cn(plan.isFeatured ? "text-secondary" : "text-secondary-foreground", "flex items-baseline gap-2")}>
-                        <p>Savings</p>
-                        <p className="text-lg">
-                          ₹ {plan.price.savings}{" "}
-                          <span className="text-sm text-green-400">{plan.price.discount}</span>
-                        </p>
-                      </div>
-                      <div className={cn("p-4 rounded-lg mt-2", plan.isFeatured && "bg-green-600/10")}>
-                        <p className="text-sm text-green-400">Offer Price:</p>
-                        <p className="text-4xl font-extrabold text-green-400">₹ {plan.price.offer.toFixed(2)}</p>
-                        <p className={cn(plan.isFeatured ? "text-primary-foreground" : "text-primary", "text-lg font-semibold")}>As low as ₹ {plan.price.perClass} / class</p>
-                        <p className="text-green-400">Monthly Payment Available</p>
-                        <p className="text-sm text-muted-foreground">Any time Cancelation</p>
-                        <div className="mt-2 border-dashed border-2 border-green-400/50 rounded-md text-center py-1">
-                          <span className="text-green-400 font-semibold tracking-widest text-sm uppercase">Early Bird</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {plans.map((plan) => {
+            const currentPrice = billingPeriod === 'upfront' ? plan.priceUpfront : plan.priceMonthly;
 
-                  <div>
-                    <h4 className={cn(plan.isFeatured ? "text-primary-foreground" : "text-primary", "font-semibold text-lg mb-4")}>What&apos;s included</h4>
-                    <ul className="space-y-3">
-                      {plan.features.map((feature) => (
-                        <li key={feature.text} className="flex items-center gap-3">
-                          {feature.included ? (
-                            <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
-                          ) : (
-                            <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
-                          )}
-                          <span
-                            className={cn(
-                              feature.included ? "text-muted-foreground" : "text-slate-500 line-through"
-                            )}
-                          >
-                            {feature.text}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-
-                <CardFooter>
-                  <Button
-                    size="lg"
-                    className={cn(
-                      "w-full font-bold text-lg py-6",
-                      plan.isFeatured
-                        ? "bg-purple-600 hover:bg-purple-700 text-white"
-                        : "bg-slate-700 hover:bg-slate-600 text-slate-100"
-                    )}
+            return (
+              <div key={plan.name} className={`relative transition-transform duration-300 ${plan.isFeatured ? "lg:scale-105" : "lg:scale-95"}`}>
+                {plan.isFeatured && (
+                  <Badge
+                    variant="default"
+                    className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 bg-purple-600 text-white font-semibold py-1 px-4 z-10"
                   >
-                    {/* {plan.cta} @ ₹ {plan.price?.offer.toFixed(2) ?? ""} */}
-                    <Link href="https://wa.me/918910436681?text=Hi%20team%20early2code%20I%20want%20to%20know%20more%20about%20monthly%20subscription">Take Monthly Subscription</Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
-          ))}
+                    Most Popular
+                  </Badge>
+                )}
+                <Card
+                  className={cn(
+                    "w-full flex flex-col h-full bg-slate-900 border transition-all duration-300 hover:shadow-xl hover:border-purple-500",
+                    plan.isFeatured
+                      ? "border-purple-600 border-2 shadow-lg shadow-purple-600/20"
+                      : "border-slate-800"
+                  )}
+                >
+                  <CardHeader className="pt-8 pb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={cn(plan.isFeatured ? "text-purple-400" : "text-slate-500")}>{plan.icon}</div>
+                      <CardTitle className="text-white font-bold text-2xl">
+                        {plan.name}
+                      </CardTitle>
+                    </div>
+                     <p className="text-purple-400 font-semibold">{plan.validity}</p>
+                    <CardDescription className="text-slate-400 h-16">{plan.description}</CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="flex-grow">
+                    <div className="mb-6">
+                      <div className="flex items-baseline gap-2">
+                          <p className="text-4xl sm:text-5xl font-extrabold text-white">₹{currentPrice.amount.toLocaleString('en-IN')}</p>
+                          <span className="text-slate-400">/{billingPeriod === 'upfront' ? 'one-time' : 'month'}</span>
+                      </div>
+                       {billingPeriod === 'upfront' && currentPrice.original && (
+                         <p className="text-slate-500 text-sm">
+                           Original Price: <span className="line-through">₹{currentPrice.original.toLocaleString('en-IN')}</span>
+                         </p>
+                       )}
+                       <p className="text-slate-300 mt-2 font-medium">As low as ₹{currentPrice.perClass} / class</p>
+                       <p className="text-green-400 text-sm mt-1">Monthly Payment Available: ₹{currentPrice.monthlyInstallment}/month</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-white font-semibold text-lg mb-4">What&apos;s included</h4>
+                      <ul className="space-y-3">
+                        {plan.features.map((feature) => (
+                          <li key={feature.text} className="flex items-start gap-3">
+                            {feature.included ? (
+                              <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                            ) : (
+                              <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                            )}
+                            <span
+                              className={cn(
+                                "text-slate-400",
+                                !feature.included && "text-slate-600 line-through"
+                              )}
+                            >
+                              {feature.text}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardContent>
+
+                  <CardFooter className="pt-6">
+                    <Button
+                      asChild
+                      size="lg"
+                      className={cn(
+                        "w-full font-bold text-lg py-6 transition-all duration-300",
+                        plan.isFeatured
+                          ? "bg-purple-600 hover:bg-purple-700 text-white shadow-lg shadow-purple-500/30"
+                          : "bg-slate-700 hover:bg-slate-600 text-slate-100"
+                      )}
+                    >
+                      <Link href={`/checkout?plan=${plan.name.toLowerCase()}&billing=${billingPeriod}`}>
+                         {plan.ctaText}
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
