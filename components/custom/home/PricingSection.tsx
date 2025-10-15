@@ -41,7 +41,7 @@ const plans: Plan[] = [
     },
     priceMonthly: {
       amount: 4320, // Example monthly price
-      perClass: 625,
+      perClass: 540,
       monthlyInstallment: 4320,
     },
     validity: "50 Classes",
@@ -68,7 +68,7 @@ const plans: Plan[] = [
     },
     priceMonthly: {
       amount: 4320,
-      perClass: 575,
+      perClass: 540,
       monthlyInstallment: 4320,
     },
     validity: "70 Classes",
@@ -95,7 +95,7 @@ const plans: Plan[] = [
     },
     priceMonthly: {
       amount: 4320,
-      perClass: 525,
+      perClass: 540,
       monthlyInstallment: 4320,
     },
     validity: "90 Classes",
@@ -134,14 +134,14 @@ const BillingToggle = ({ billingPeriod, setBillingPeriod }: {
     <span className={cn("font-medium", billingPeriod === 'upfront' ? 'text-white' : 'text-slate-400')}>
       Pay Upfront
     </span>
-    <Badge variant="default" className="bg-green-600/80 text-white font-semibold">
+    {/* <Badge variant="default" className="bg-green-600/80 text-white font-semibold">
       Save 10%
-    </Badge>
+    </Badge> */}
   </div>
 );
 
 export function PricingSection() {
-  const [billingPeriod, setBillingPeriod] = useState<'upfront' | 'monthly'>('upfront');
+  const [billingPeriod, setBillingPeriod] = useState<'upfront' | 'monthly'>('monthly');
 
   return (
     <section id="plans" className="py-16 sm:py-24 bg-black text-white">
