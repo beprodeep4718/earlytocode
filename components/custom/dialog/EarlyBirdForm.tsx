@@ -40,7 +40,7 @@ export function EarlyBirdForm() {
         />
         <Button type="submit" size="lg" className="font-bold h-12" disabled={isLoading}>
           {isLoading && verificationStep === 'enter-phone' && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          Get Early Access
+          Get Free Consultation
         </Button>
       </form>
 

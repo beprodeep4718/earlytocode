@@ -4,6 +4,7 @@ import { CheckCircle2, XCircle, Flame, Rocket, Crown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
+import Link from "next/link";
 
 // --- Types ---
 type PlanFeature = {
@@ -168,6 +169,7 @@ export function PricingSection(){
                         <p className="text-sm text-green-400">Offer Price:</p>
                         <p className="text-4xl font-extrabold text-green-400">₹ {plan.price.offer.toFixed(2)}</p>
                         <p className={cn(plan.isFeatured ? "text-primary-foreground" : "text-primary", "text-lg font-semibold")}>As low as ₹ {plan.price.perClass} / class</p>
+                        <p className="text-lime-300">Monthly Payment Available</p>
                         <div className="mt-2 border-dashed border-2 border-green-400/50 rounded-md text-center py-1">
                           <span className="text-green-400 font-semibold tracking-widest text-sm uppercase">Early Bird</span>
                         </div>
@@ -209,7 +211,7 @@ export function PricingSection(){
                     )}
                   >
                     {/* {plan.cta} @ ₹ {plan.price?.offer.toFixed(2) ?? ""} */}
-                    Comming Soon
+                    <Link href="https://wa.me/918910436681?text=Hi%20team%20early2code%20I%20want%20to%20know%20more%20about%20monthly%20subscription">Take Monthly Subscription</Link>
                   </Button>
                 </CardFooter>
               </Card>

@@ -43,12 +43,12 @@ const features: Feature[] = [
       "Build strong basics in programming, data structures, and algorithms step by step.",
   },
   {
-    title: "Jee Preparation",
+    title: "Jee / Olympiads",
     icon: Calculator,
     iconBg: "bg-red-100",
     iconColor: "text-red-600",
     description:
-      "Focused preparation resources and coding-based math reinforcement for JEE aspirants.",
+      "Programming sharpens the brain and helps prepare your child for competitive exams like the JEE and Olympiads.",
   },
   {
     title: "Study material",

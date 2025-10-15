@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { EarlyBirdForm } from "../dialog/EarlyBirdForm";
 import { EnrollmentShowcase } from "./EnrollmentShowcase";
+import { Button } from "@/components/ui/button";
+import ContactDialog from "../dialog/ContactDialog";
 
 export default function Hero() {
   return (
@@ -14,7 +16,7 @@ export default function Hero() {
           <div className="flex flex-col justify-center text-center lg:text-left">
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-4xl text-foreground">
               Give Your Child The{" "}
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500 lg:leading-20 italic text-5xl">
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500 lg:leading-20 text-5xl">
                 1:1 Coding Advantage
               </span>
             </h1>
@@ -24,8 +26,16 @@ export default function Hero() {
               coding education.
             </p>
 
-            <EnrollmentShowcase />
-            <EarlyBirdForm />
+            {/* <EnrollmentShowcase />
+            <EarlyBirdForm /> */}
+            <div className="mt-4">
+              <ContactDialog />
+            </div>
+            <p className="text-muted-foreground mt-4 mx-w-xl mx-auto">
+              Our online 1:1 classes make learning programming fun and easy for
+              kids aged 8–18, helping them build real skills and confidence
+              right from home.
+            </p>
           </div>
 
           {/* Right Column: Image */}

@@ -22,7 +22,7 @@ const topSalaries = [
     role: 'Software Engineer',
     base: 20,
     stock: 40,
-    others: 64,
+    others: 4,
   },
   {
     name: 'Google',

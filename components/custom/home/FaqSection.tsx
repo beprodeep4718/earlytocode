@@ -14,11 +14,11 @@ const faqData = [
     answer:
       "Just a small laptop and a stable internet connection. We’ll take care of everything else.",
   },
-  {
-    question: "What is the refund policy?",
-    answer:
-      "If you raise a refund request within 2 weeks of your class start date, we’ll issue a 100% refund—no questions asked.",
-  },
+  // {
+  //   question: "What is the refund policy?",
+  //   answer:
+  //     "If you raise a refund request within 2 weeks of your class start date, we’ll issue a 100% refund—no questions asked.",
+  // },
   {
     question: "When will the classes be scheduled?",
     answer:

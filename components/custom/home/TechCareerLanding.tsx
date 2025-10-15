@@ -6,6 +6,7 @@ import {
   ArrowRight,
   BrainCircuit,
   CheckCircle,
+  Contact,
   Rocket,
   ShieldCheck,
   Target,
@@ -13,6 +14,7 @@ import {
 import { ShineBorder } from "../../ui/shine-border";
 import { AnimatedGradientText } from "../../ui/animated-gradient-text";
 import { OtpVerificationDialog } from "../dialog/OtpVerificationDialog";
+import ContactDialog from "../dialog/ContactDialog";
 
 // --- DATA (with improved copy) ---
 const companies = [
@@ -84,7 +86,7 @@ export default function TechCareerLanding() {
               ₹50+ LPA Career
             </span>
           </h1>
-          <OtpVerificationDialog />
+          <ContactDialog  />
           
         </div>
 

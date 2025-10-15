@@ -66,7 +66,7 @@ export default function Home() {
         </section>
         <TopSalariesSection />
         <TechCareerLanding />
-        <CountdownTimerCard />
+        {/* <CountdownTimerCard /> */}
         <PricingSection />
         <FaqSection />
       </main>
