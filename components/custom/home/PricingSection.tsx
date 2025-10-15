@@ -169,7 +169,8 @@ export function PricingSection(){
                         <p className="text-sm text-green-400">Offer Price:</p>
                         <p className="text-4xl font-extrabold text-green-400">₹ {plan.price.offer.toFixed(2)}</p>
                         <p className={cn(plan.isFeatured ? "text-primary-foreground" : "text-primary", "text-lg font-semibold")}>As low as ₹ {plan.price.perClass} / class</p>
-                        <p className="text-lime-300">Monthly Payment Available</p>
+                        <p className="text-green-400">Monthly Payment Available</p>
+                        <p className="text-sm text-muted-foreground">Any time Cancelation</p>
                         <div className="mt-2 border-dashed border-2 border-green-400/50 rounded-md text-center py-1">
                           <span className="text-green-400 font-semibold tracking-widest text-sm uppercase">Early Bird</span>
                         </div>

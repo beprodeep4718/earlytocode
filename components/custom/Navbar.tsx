@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           
           {/* Desktop Auth Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* <div className="hidden md:flex items-center gap-4">
             {!isLoading && (
               user ? (
                 <>
@@ -51,7 +51,7 @@ export default function Navbar() {
                 </Link>
               )
             )}
-          </div>
+          </div> */}
           
           <ModeToggle />
 
@@ -81,7 +81,7 @@ export default function Navbar() {
                   </nav>
 
                   {/* Mobile Auth Buttons at the bottom */}
-                  <div className="mt-auto pt-6 border-t border-border">
+                  {/* <div className="mt-auto pt-6 border-t border-border">
                     {!isLoading && (
                       user ? (
                         <div className="space-y-4">
@@ -98,7 +98,7 @@ export default function Navbar() {
                         </Link>
                       )
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </SheetContent>
             </Sheet>

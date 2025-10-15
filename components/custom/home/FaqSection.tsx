@@ -10,6 +10,10 @@ import {
 // --- FAQ Data (updated based on requested Q&A) ---
 const faqData = [
   {
+    question: "How to cancel the monthly subscription?",
+    answer: "If you want to cancel the course you can stop paying for the course. No questions will be asked."
+  },
+  {
     question: "What are the requirements?",
     answer:
       "Just a small laptop and a stable internet connection. We’ll take care of everything else.",

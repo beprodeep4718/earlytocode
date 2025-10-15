@@ -31,10 +31,8 @@ export default function Hero() {
             <div className="mt-4">
               <ContactDialog />
             </div>
-            <p className="text-muted-foreground mt-4 mx-w-xl mx-auto">
-              Our online 1:1 classes make learning programming fun and easy for
-              kids aged 8–18, helping them build real skills and confidence
-              right from home.
+            <p className="text-primary text-lg mt-4 mx-w-xl">
+              Who can join: Kids and teens between 8 and 18 years old.
             </p>
           </div>
 

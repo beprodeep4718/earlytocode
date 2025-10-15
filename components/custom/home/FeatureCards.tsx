@@ -11,12 +11,12 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    title: "Refund policy",
+    title: "Cancel anytime",
     icon: Brain,
     iconBg: "bg-purple-100",
     iconColor: "text-purple-600",
     description:
-      "We offer a 100% refund of the course fees within 2 weeks from the commencement date of the class, no questions asked.",
+      "Our monthly subscription model allows you to discontinue the course anytime.",
   },
   {
     title: "Leetcode",
