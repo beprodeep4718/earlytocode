@@ -242,7 +242,7 @@ export function PricingSection() {
                           : "bg-slate-700 hover:bg-slate-600 text-slate-100"
                       )}
                     >
-                      <Link href={`/checkout?plan=${plan.name.toLowerCase()}&billing=${billingPeriod}`}>
+                      <Link href="https://wa.me/918910436681?text=Hi%20team%20early2code%20I%20want%20to%20know%20more%20about%20monthly%20subscription">
                          {plan.ctaText}
                       </Link>
                     </Button>
