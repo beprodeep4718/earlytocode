@@ -37,12 +37,12 @@ const plans: Plan[] = [
       amount: 27000,
       original: 30000,
       perClass: 540,
-      monthlyInstallment: 4320, // 27000 / 12 months
+      monthlyInstallment: 2160, // 27000 / 12 months
     },
     priceMonthly: {
-      amount: 4320, // Example monthly price
+      amount: 2160, // Example monthly price
       perClass: 540,
-      monthlyInstallment: 4320,
+      monthlyInstallment: 2160,
     },
     validity: "50 Classes",
     isFeatured: false,
@@ -64,12 +64,12 @@ const plans: Plan[] = [
       amount: 36000,
       original: 40000,
       perClass: 514,
-      monthlyInstallment: 4320, // 36000 / 18 months
+      monthlyInstallment: 2160, // 36000 / 18 months
     },
     priceMonthly: {
-      amount: 4320,
+      amount: 2160,
       perClass: 540,
-      monthlyInstallment: 4320,
+      monthlyInstallment: 2160,
     },
     validity: "70 Classes",
     isFeatured: false, // Let's make this the featured plan
@@ -91,12 +91,12 @@ const plans: Plan[] = [
       amount: 45000,
       original: 50000,
       perClass: 500,
-      monthlyInstallment: 4320, // 45000 / 24 months
+      monthlyInstallment: 2160, // 45000 / 24 months
     },
     priceMonthly: {
-      amount: 4320,
+      amount: 2160,
       perClass: 540,
-      monthlyInstallment: 4320,
+      monthlyInstallment: 2160,
     },
     validity: "90 Classes",
     isFeatured: false,
@@ -155,9 +155,9 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="mb-12">
+        {/* <div className="mb-12">
             <BillingToggle billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan) => {
@@ -188,7 +188,7 @@ export function PricingSection() {
                         {plan.name}
                       </CardTitle>
                     </div>
-                     <p className="text-purple-400 font-semibold">{plan.validity}</p>
+                     {/* <p className="text-purple-400 font-semibold">{plan.validity}</p> */}
                     <CardDescription className="text-slate-400 h-16">{plan.description}</CardDescription>
                   </CardHeader>
 

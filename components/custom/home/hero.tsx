@@ -31,8 +31,9 @@ export default function Hero() {
             <div className="mt-4">
               <ContactDialog />
             </div>
-            <p className="text-primary text-lg mt-4 mx-w-xl">
-              Who can join: Kids and teens between 8 and 18 years old.
+            <p className="mt-4 max-w-xl mx-auto lg:mx-0 text-sm text-muted-foreground">
+              <span className="font-bold text-primary">Who can join:</span> Kids
+              and teens between 8 and 18 years old.
             </p>
           </div>
 

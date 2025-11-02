@@ -18,11 +18,11 @@ export default function ContactDialog() {
     <Dialog>
       <form>
         <DialogTrigger asChild>
-          <Button className="px-8 py-6" variant="outline">Contact Us</Button>
+          <Button className="px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:from-purple-700 hover:to-blue-600" variant="outline">Book Your Free Class</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Contact Us</DialogTitle>
+            <DialogTitle>Booking Free Class</DialogTitle>
             <DialogDescription>
               Send a Whatsapp Message
             </DialogDescription>
