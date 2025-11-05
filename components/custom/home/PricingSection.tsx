@@ -242,8 +242,8 @@ export function PricingSection() {
                           : "bg-slate-700 hover:bg-slate-600 text-slate-100"
                       )}
                     >
-                      <Link href="https://wa.me/918910436681?text=Hi%20team%20early2code%20I%20want%20to%20know%20more%20about%20monthly%20subscription">
-                         {plan.ctaText}
+                      <Link href="https://wa.me/917019889660?text=Hi%20Early2Code%2C%20I%20want%20to%20start%20monthly%20subscription">
+                         Monthly Subscription
                       </Link>
                     </Button>
                   </CardFooter>

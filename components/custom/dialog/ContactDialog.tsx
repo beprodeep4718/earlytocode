@@ -28,7 +28,7 @@ export default function ContactDialog() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button className="w-full" type="submit"><Link href="https://wa.me/918910436681?text=Hi%20team%20early2code%2C%20I%20want%20to%20know%20more%20about%20the%20course">Send Message</Link></Button>
+            <Button className="w-full" type="submit"><Link href="https://wa.me/917019889660?text=Hi%20Early2Code%2CI%20want%20to%20book%20a%20free%20class">Send Message</Link></Button>
           </DialogFooter>
         </DialogContent>
       </form>
