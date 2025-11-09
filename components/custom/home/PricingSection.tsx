@@ -44,7 +44,7 @@ const plans: Plan[] = [
       perClass: 540,
       monthlyInstallment: 2160,
     },
-    validity: "50 Classes",
+    validity: "40-50 Classes",
     isFeatured: false,
     features: [
       { text: "Hands on Python basics", included: true },
@@ -71,7 +71,7 @@ const plans: Plan[] = [
       perClass: 540,
       monthlyInstallment: 2160,
     },
-    validity: "70 Classes",
+    validity: "60-70 Classes",
     isFeatured: false, // Let's make this the featured plan
     features: [
       { text: "Everything in Basic", included: true },
@@ -98,7 +98,7 @@ const plans: Plan[] = [
       perClass: 540,
       monthlyInstallment: 2160,
     },
-    validity: "90 Classes",
+    validity: "80-90 Classes",
     isFeatured: false,
     features: [
       { text: "Everything in Intermediate", included: true },
@@ -188,7 +188,7 @@ export function PricingSection() {
                         {plan.name}
                       </CardTitle>
                     </div>
-                     {/* <p className="text-purple-400 font-semibold">{plan.validity}</p> */}
+                     <p className="text-purple-400 font-semibold">{plan.validity}</p>
                     <CardDescription className="text-slate-400 h-16">{plan.description}</CardDescription>
                   </CardHeader>
 

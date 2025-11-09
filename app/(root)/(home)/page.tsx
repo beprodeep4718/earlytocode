@@ -11,6 +11,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CountdownTimerCard } from "@/components/custom/home/CountdownTimerCard";
 import { TopSalariesSection } from "@/components/custom/home/TopSalariesSection";
 import { ShineBorder } from "@/components/ui/shine-border";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,8 +20,9 @@ export default function Home() {
       <main className="bg-background">
         <Hero />
         {/* why start coding */}
-        <section className="py-16 px-4 bg-background">
+        <section className="py-10 px-4 bg-background">
           <div className="max-w-6xl mx-auto">
+            <div className="w-full py-6 flex items-center justify-center"><Button className="px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:from-purple-700 hover:to-blue-600" variant="outline"><Link href="https://api.whatsapp.com/send/?phone=917019889660&text=Requesting+a+call+back.&type=phone_number&app_absent=0">Request a Call Back</Link></Button></div>
             <div className="mb-12">
               <Card className="dark:bg-slate-900/60 not-dark:bg-slate-200/60 backdrop-blur-sm max-w-4xl mx-auto relative overflow-hidden">
                 <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />

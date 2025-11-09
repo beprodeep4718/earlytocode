@@ -20,11 +20,11 @@ export default function Hero() {
                 1:1 Coding Advantage
               </span>
             </h1>
-            <p className="mt-4 max-w-xl mx-auto lg:mx-0 text-sm text-muted-foreground">
+            {/* <p className="mt-4 max-w-xl mx-auto lg:mx-0 text-sm text-muted-foreground">
               Pre-register now for exclusive early bird access. Secure your
               child&apos;s spot and unlock their potential with personalized
               coding education.
-            </p>
+            </p> */}
 
             {/* <EnrollmentShowcase />
             <EarlyBirdForm /> */}

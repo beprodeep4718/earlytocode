@@ -80,11 +80,14 @@ export default function TechCareerLanding() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* --- HERO SECTION --- */}
         <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+          {/* <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
             Unlock Your Child&apos;s Path to a
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mt-2">
               ₹50+ LPA Career
             </span>
+          </h1> */}
+          <h1 className="text-2xl md:text-2xl font-extrabold tracking-tight mb-6 max-w-3xl mx-auto bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            Be part of an exclusive community of like-minded parents helping their kids stay AI-ready through coding.
           </h1>
           <ContactDialog  />
           
